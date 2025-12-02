@@ -12,6 +12,10 @@ fun main() {
             val (a, b) = it.split("-")
             a.toLong() to b.toLong()
         }
+    partOne(ranges)
+}
+
+private fun partOne(ranges: List<Pair<Long, Long>>) {
     val repetitions = mutableListOf<Long>()
     for (range in ranges) {
         repetitions.addAll(findRepetitionsInRange(range.first, range.second))
