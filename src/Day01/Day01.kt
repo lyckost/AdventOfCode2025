@@ -11,6 +11,7 @@ fun main() {
     partTwo(lines)
 }
 
+// 989
 private fun partOne(lines: List<String>) {
     var count = 0
     var dial = 50
@@ -34,6 +35,7 @@ private fun partOne(lines: List<String>) {
     println(count)
 }
 
+// 5941
 fun partTwo(lines: List<String>) {
     var count = 0
     var dial = 50
