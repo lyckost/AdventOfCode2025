@@ -1,4 +1,4 @@
-package Day03
+package day03
 
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
