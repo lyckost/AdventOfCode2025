@@ -2,7 +2,6 @@ package day08
 
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
-import kotlin.math.sqrt
 
 val input = Path("src/Day08/day_08_input.txt")
 
@@ -14,16 +13,13 @@ fun main() {
 fun partOne() {
     val lines = input.readLines()
     val src = lines.map { line -> line.split(",").map { it.toLong() } }
-    val connectedBoxes = mutableMapOf<Double, Pair<Int, Int>>()
-
+    val connectedBoxes = mutableMapOf<Long, Pair<Int, Int>>()
     for (i in 0 until src.size) {
         val a = src[i]
         for (j in i + 1 until src.size) {
             val b = src[j]
-            val distance = sqrt(
-                a.zip(b)
-                    .sumOf { (a, b) -> (a - b) * (a - b) }.toDouble()
-            )
+            val distance = a.zip(b)
+                .sumOf { (a, b) -> (a - b) * (a - b) }
             connectedBoxes.putIfAbsent(distance, Pair(i, j))
         }
     }
